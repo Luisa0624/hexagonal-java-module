@@ -6,10 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="application" />
         <module name="infrastructure" />
+      </profile>
+      <profile name="Annotation profile for hexagonal-java-module" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
+        </processorPath>
+        <module name="application" />
         <module name="domain" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="infrastructure" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
